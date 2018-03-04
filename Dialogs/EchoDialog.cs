@@ -35,7 +35,8 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
             {
 
                 await context.PostAsync($"Chanel is {message.ChannelId}");
-                await context.PostAsync($"Chanel name is {message.Conversation.Name}");
+                await context.PostAsync($"Conversation id is {message.Conversation.Id}");
+                await context.PostAsync($"Conversation name is {message.Conversation.Name ?? "null"}");
                 await context.PostAsync($"{this.count++}: You said {message.Text}. Length is {message.Text.Length}");
                 context.Wait(MessageReceivedAsync);
             }
